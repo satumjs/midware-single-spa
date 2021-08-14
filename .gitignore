@@ -1,7 +1,7 @@
 node_modules/
+lib/
 lerna-debug.log
 npm-debug.log
-packages/*/lib
 yarn.lock
 package-lock.json
 coverage/
