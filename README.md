@@ -1,11 +1,14 @@
 # `@satumjs/midware-single-spa`
 
-> TODO: description
+single-spa midware for satum-micro
 
 ## Usage
 
-```
-const midwareSingleSpa = require('@satumjs/midware-single-spa');
+```js
+import midwareSingleSpa from '@satumjs/midware-single-spa';
 
-// TODO: DEMONSTRATE API
+satumCore.use(midwareSingleSpa);
+
+// use options
+// satumCore.use(midwareSingleSpa, { timeout: 5 * 60 * 1000 });
 ```
