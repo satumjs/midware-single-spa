@@ -12,12 +12,16 @@ const plugins = [
   terser(),
 ];
 
-const config = {
+const umdConfig = {
   input: 'src/index.ts',
-  output: [
-    { dir: 'lib', name: 'satumSingleSpaMidware', format: 'umd' },
-    { file: 'lib/index.es.js', format: 'es' },
-  ],
+  output: { dir: 'lib', name: 'satumSingleSpaMidware', format: 'umd' },
+  plugins,
+};
+
+const esConfig = {
+  input: 'src/index.ts',
+  external: ['@satumjs/types', 'single-spa'],
+  output: { file: 'lib/index.es.js', format: 'es' },
   plugins,
 };
 
@@ -27,4 +31,4 @@ const dtsConfig = {
   plugins: [dts()]
 }
 
-export default [config, dtsConfig];
+export default [umdConfig, esConfig, dtsConfig];
