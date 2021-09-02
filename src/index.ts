@@ -6,16 +6,6 @@ import {
   setUnmountMaxTime,
   setUnloadMaxTime,
   RegisterApplicationConfig,
-  navigateToUrl,
-  pathToActiveWhen,
-  getMountedApps,
-  getAppNames,
-  getAppStatus,
-  unloadApplication,
-  unregisterApplication,
-  checkActivityFunctions,
-  addErrorHandler,
-  removeErrorHandler,
 } from 'single-spa';
 import { MidwareSystem, RealMicroApp, NextFn } from '@satumjs/types';
 
@@ -35,16 +25,3 @@ export default function singleSpaMidware(system: MidwareSystem, microApps: RealM
 
   next();
 }
-
-export {
-  navigateToUrl,
-  pathToActiveWhen,
-  getMountedApps,
-  getAppNames,
-  getAppStatus,
-  unloadApplication,
-  unregisterApplication,
-  checkActivityFunctions,
-  addErrorHandler,
-  removeErrorHandler,
-};

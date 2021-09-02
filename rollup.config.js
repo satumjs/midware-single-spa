@@ -14,6 +14,7 @@ const plugins = [
 
 const umdConfig = {
   input: 'src/index.ts',
+  external: ['single-spa'],
   output: { dir: 'lib', name: 'satumSingleSpaMidware', format: 'umd' },
   plugins,
 };
