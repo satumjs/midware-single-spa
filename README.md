@@ -1,4 +1,4 @@
-# `@satumjs/midware-single-spa`
+# @satumjs/midware-single-spa
 
 single-spa midware for satum-micro
 
