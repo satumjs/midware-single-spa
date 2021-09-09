@@ -1,6 +1,6 @@
 {
   "name": "@satumjs/midware-single-spa",
-  "version": "0.0.3",
+  "version": "0.0.4-experimental-0.1",
   "description": "single-spa midware for satum-micro",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -13,7 +13,7 @@
     "pub": "npm run build && npm publish --access public"
   },
   "dependencies": {
-    "@satumjs/types": "^0.0.1",
+    "@satumjs/types": "~0.0.1",
     "single-spa": "^5.9.3"
   },
   "devDependencies": {
