@@ -1,3 +1,4 @@
+import { MidwareSystem, RealMicroApp, NextFn } from '@satumjs/types';
 import {
   registerApplication,
   start as sspaStart,
@@ -6,12 +7,14 @@ import {
   setUnmountMaxTime,
   setUnloadMaxTime,
   RegisterApplicationConfig,
+  addErrorHandler,
+  removeErrorHandler,
 } from 'single-spa';
-import { MidwareSystem, RealMicroApp, NextFn } from '@satumjs/types';
 
+export { addErrorHandler, removeErrorHandler };
 export default function singleSpaMidware(system: MidwareSystem, microApps: RealMicroApp[], next: NextFn) {
   const defaultTimeout = 4000; // single-spa default timeout
-  const { timeout, bootstrapMaxTime, mountMaxTime, unmountMaxTime, unloadMaxTime } = system.options;
+  const { timeout, bootstrapMaxTime, mountMaxTime, unmountMaxTime, unloadMaxTime, errorHandler } = system.options;
   setBootstrapMaxTime(bootstrapMaxTime || timeout || defaultTimeout);
   setMountMaxTime(mountMaxTime || timeout || defaultTimeout);
   setUnmountMaxTime(unmountMaxTime || timeout || defaultTimeout);
@@ -22,6 +25,10 @@ export default function singleSpaMidware(system: MidwareSystem, microApps: RealM
   });
 
   system.set('start', sspaStart);
+
+  if (errorHandler) {
+    addErrorHandler(errorHandler);
+  }
 
   next();
 }
