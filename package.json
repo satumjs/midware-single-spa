@@ -1,6 +1,6 @@
 {
   "name": "@satumjs/midware-single-spa",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "single-spa midware for satum-micro",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -38,7 +38,8 @@
   },
   "homepage": "https://github.com/satumjs/midware-single-spa#readme",
   "files": [
-    "lib"
+    "lib",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",
