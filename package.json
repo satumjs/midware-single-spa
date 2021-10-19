@@ -1,6 +1,6 @@
 {
   "name": "@satumjs/midware-single-spa",
-  "version": "0.0.6-rc.0",
+  "version": "0.0.6-rc.1",
   "description": "single-spa midware for satum-micro",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
