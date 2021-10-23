@@ -15,6 +15,7 @@ export { addErrorHandler, removeErrorHandler };
 export default function singleSpaMidware(system: MidwareSystem, microApps: RealMicroApp[], next: NextFn) {
   const defaultTimeout = 4000; // single-spa default timeout
   const { timeout, bootstrapMaxTime, mountMaxTime, unmountMaxTime, unloadMaxTime, errorHandler } = system.options;
+
   setBootstrapMaxTime(bootstrapMaxTime || timeout || defaultTimeout);
   setMountMaxTime(mountMaxTime || timeout || defaultTimeout);
   setUnmountMaxTime(unmountMaxTime || timeout || defaultTimeout);
