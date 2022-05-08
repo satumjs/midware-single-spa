@@ -1,0 +1,16 @@
+language: node_js
+sudo: false
+
+node_js:
+  - 12
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run test
+  - ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info
