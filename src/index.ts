@@ -1,15 +1,5 @@
 import { MidwareSystem, IMicroApp, NextFn, MidwareName } from '@satumjs/types';
-import {
-  registerApplication,
-  start as sspaStart,
-  setBootstrapMaxTime,
-  setMountMaxTime,
-  setUnmountMaxTime,
-  setUnloadMaxTime,
-  RegisterApplicationConfig,
-  addErrorHandler,
-  removeErrorHandler,
-} from 'single-spa';
+import { registerApplication, start, setBootstrapMaxTime, setMountMaxTime, setUnmountMaxTime, setUnloadMaxTime, addErrorHandler, removeErrorHandler } from 'single-spa';
 
 export { addErrorHandler, removeErrorHandler };
 export default function singleSpaMidware(system: MidwareSystem, microApps: IMicroApp[], next: NextFn) {
@@ -23,10 +13,10 @@ export default function singleSpaMidware(system: MidwareSystem, microApps: IMicr
 
   system.set(MidwareName.start, () => {
     microApps.forEach(({ name, app, activeWhen, customProps }) => {
-      const config = { name, app, activeWhen, customProps } as RegisterApplicationConfig;
-      registerApplication(config);
+      const config = { name, app, activeWhen, customProps };
+      registerApplication(config as any);
     });
-    typeof urlRerouteOnly === 'undefined' ? sspaStart() : sspaStart({ urlRerouteOnly });
+    typeof urlRerouteOnly === 'undefined' ? start() : start({ urlRerouteOnly });
   });
 
   if (errorHandler) {
