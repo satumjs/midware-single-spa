@@ -1,15 +1,13 @@
 # @satumjs/midware-single-spa
 
-single-spa midware for satum-micro
-
-<p align="center">
+<p>
   <a href="https://www.npmjs.com/package/@satumjs/midware-single-spa">
     <img src="https://img.shields.io/npm/v/@satumjs/midware-single-spa.svg" alt="version"/>
   </a>
   <a href="https://www.npmjs.com/package/@satumjs/midware-single-spa">
     <img src="https://img.shields.io/npm/dt/@satumjs/midware-single-spa.svg" alt="downloads"/>
   </a>
-  <a href="https://github.com/micro-zoe/micro-app/blob/master/LICENSE">
+  <a href="https://github.com/satumjs/midware-single-spa/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/@satumjs/midware-single-spa.svg" alt="license"/>
   </a>
   <a href="https://gitter.im/satumjs/midware-single-spa">
@@ -22,6 +20,8 @@ single-spa midware for satum-micro
     <img src="https://coveralls.io/repos/github/satumjs/midware-single-spa/badge.svg?branch=master" alt="coveralls"/>
   </a>
 </p>
+
+single-spa midware for satum-micro
 
 ## Usage
 
