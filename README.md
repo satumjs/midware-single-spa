@@ -1,25 +1,6 @@
 # @satumjs/midware-single-spa
 
-<p>
-  <a href="https://www.npmjs.com/package/@satumjs/midware-single-spa">
-    <img src="https://img.shields.io/npm/v/@satumjs/midware-single-spa.svg" alt="version"/>
-  </a>
-  <a href="https://www.npmjs.com/package/@satumjs/midware-single-spa">
-    <img src="https://img.shields.io/npm/dt/@satumjs/midware-single-spa.svg" alt="downloads"/>
-  </a>
-  <a href="https://github.com/satumjs/midware-single-spa/blob/master/LICENSE">
-    <img src="https://img.shields.io/npm/l/@satumjs/midware-single-spa.svg" alt="license"/>
-  </a>
-  <a href="https://gitter.im/satumjs/midware-single-spa">
-    <img src="https://badges.gitter.im/satumjs/midware-single-spa.svg" alt="gitter">
-  </a>
-  <a href="https://travis-ci.com/github/satumjs/midware-single-spa">
-    <img src="https://api.travis-ci.com/satumjs/midware-single-spa.svg?branch=master" alt="travis"/>
-  </a>
-  <a href="https://coveralls.io/github/satumjs/midware-single-spa?branch=master">
-    <img src="https://coveralls.io/repos/github/satumjs/midware-single-spa/badge.svg?branch=master" alt="coveralls"/>
-  </a>
-</p>
+[![NPM version](https://img.shields.io/npm/v/@satumjs/midware-single-spa.svg)](https://www.npmjs.com/package/@satumjs/midware-single-spa) [![NPM downloads](https://img.shields.io/npm/dt/@satumjs/midware-single-spa.svg)](https://www.npmjs.com/package/@satumjs/midware-single-spa) [![LICENSE](https://img.shields.io/npm/l/@satumjs/midware-single-spa.svg)](https://github.com/satumjs/midware-single-spa/blob/master/LICENSE) <!-- [![gitter](https://badges.gitter.im/satumjs/midware-single-spa.svg)](https://gitter.im/satumjs/midware-single-spa) --> [![CircleCI](https://circleci.com/gh/satumjs/midware-single-spa/tree/master.svg?style=svg)](https://circleci.com/gh/satumjs/midware-single-spa/tree/master) [![coveralls coverage](https://coveralls.io/repos/github/satumjs/midware-single-spa/badge.svg?branch=master)](https://coveralls.io/github/satumjs/midware-single-spa?branch=master) [![Install size](https://badgen.net/packagephobia/install/@satumjs/midware-single-spa)](https://packagephobia.now.sh/result?p=@satumjs/midware-single-spa) [![brotli](https://badgen.net/bundlephobia/minzip/@satumjs/midware-single-spa)](https://bundlephobia.com/result?p=@satumjs/midware-single-spa)
 
 single-spa midware for satum-micro
 
