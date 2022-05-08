@@ -31,5 +31,5 @@ import midwareSingleSpa from '@satumjs/midware-single-spa';
 satumCore.use(midwareSingleSpa);
 
 // use options
-// satumCore.use(midwareSingleSpa, { timeout: 5 * 60 * 1000 });
+// satumCore.use(midwareSingleSpa, { timeout: 5 * 60 * 1000, urlRerouteOnly: true });
 ```
