@@ -8,7 +8,7 @@
   "author": "valleykid <valleykiddy@gmail.com>",
   "scripts": {
     "test": "jest",
-    "test:coverage": "rimraf coverage && npm test --coverage",
+    "test:coverage": "rimraf coverage && npm test -- --coverage",
     "build": "rimraf lib && rollup -c",
     "build:w": "npm run build -- -w",
     "pub": "npm run build && npm publish --access public"

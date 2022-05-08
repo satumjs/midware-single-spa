@@ -9,16 +9,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/midware-single-spa
-      - restore_cache:
-          key: node-modules-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: yarn --frozen-lockfile
-      - save_cache:
-          key: node-modules-{{ checksum "yarn.lock" }}
-          paths:
-            - ./node_modules
-            - ~/.cache/yarn
+          command: yarn
       - run:
           name: Run Build
           command: yarn build
