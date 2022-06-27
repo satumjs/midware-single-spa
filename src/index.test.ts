@@ -1,6 +1,5 @@
 jest.mock('single-spa');
-import { MidwareName } from '@satumjs/types';
-import { registerApplication, start, setBootstrapMaxTime, setMountMaxTime, setUnmountMaxTime, setUnloadMaxTime } from 'single-spa';
+import { registerApplication, setBootstrapMaxTime, setMountMaxTime, setUnloadMaxTime, setUnmountMaxTime, start } from 'single-spa';
 import singleSpaMidware, { addErrorHandler, removeErrorHandler } from '.';
 
 describe('@satumjs/midware-single-spa test', () => {
@@ -9,33 +8,39 @@ describe('@satumjs/midware-single-spa test', () => {
     expect(typeof removeErrorHandler).toBe('function');
   });
 
-  test('singleSpaMidware', () => {
-    const configs = {} as any;
-    const set = (cfgName: MidwareName, cfgValue: any) => (configs[cfgName] = cfgValue);
+  test('singleSpaMidware default', () => {
+    const set = jest.fn();
     const fakeSystem = { options: {}, set } as any;
-    const microApps: any[] = [{ name: 'test' }, { name: 'foo' }];
+    const microApps = [{ name: 'foo' }, { name: 'bar' }] as any;
     const next = jest.fn();
 
     singleSpaMidware(fakeSystem, microApps, next);
-    expect(setBootstrapMaxTime).toHaveBeenCalledTimes(1);
-    expect(setBootstrapMaxTime).toHaveBeenCalledWith(4000);
-    expect(setMountMaxTime).toHaveBeenCalledTimes(1);
-    expect(setUnmountMaxTime).toHaveBeenCalledTimes(1);
-    expect(setUnloadMaxTime).toHaveBeenCalledTimes(1);
-    expect(MidwareName.start in configs).toBe(true);
+    expect(setBootstrapMaxTime).toBeCalledTimes(1);
+    expect(setBootstrapMaxTime).toBeCalledWith(4000);
+    expect(setMountMaxTime).toBeCalledTimes(1);
+    expect(setUnmountMaxTime).toBeCalledTimes(1);
+    expect(setUnloadMaxTime).toBeCalledTimes(1);
 
-    configs[MidwareName.start]();
-    expect(registerApplication).toHaveBeenCalledTimes(2);
-    expect(start).toHaveBeenCalledTimes(1);
+    expect(set).toBeCalled();
+    const fnStart = set.mock.calls[0][1];
+    fnStart();
+    expect(registerApplication).toBeCalledTimes(2);
+    expect(start).toBeCalledTimes(1);
+  });
 
-    fakeSystem.options.urlRerouteOnly = true;
-    fakeSystem.options.errorHandler = jest.fn();
-    fakeSystem.options.bootstrapMaxTime = 1000;
+  test('singleSpaMidware options', () => {
+    const set = jest.fn();
+    const fakeSystem = { options: { urlRerouteOnly: true, errorHandler: jest.fn(), bootstrapMaxTime: 1000 }, set } as any;
+    const microApps: any[] = [{ name: 'foo' }, { name: 'bar' }];
+    const next = jest.fn();
+
     singleSpaMidware(fakeSystem, microApps, next);
-    expect(setBootstrapMaxTime).toHaveBeenCalledWith(1000);
-    configs[MidwareName.start]();
-    expect(start).toHaveBeenCalledWith({ urlRerouteOnly: true });
+    const fnStart = set.mock.calls[0][1];
+    fnStart();
+
+    expect(setBootstrapMaxTime).toBeCalledWith(1000);
+    expect(start).toBeCalledWith({ urlRerouteOnly: true });
     expect(addErrorHandler).toBeCalledTimes(1);
-    expect(next).toHaveBeenCalledTimes(2);
+    expect(next).toBeCalledTimes(1);
   });
 });
